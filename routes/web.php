@@ -19,14 +19,6 @@ Route::get('/', function () {
     return redirect('/contacts');
 });
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('/contacts',   [ContactController::class, 'index'])->withoutMiddleware('auth');
-//     Route::get('/contacts/{contact}', [ContactController::class, 'show'])->withoutMiddleware('auth')->name("contacts.show");
-//     Route::get('/contacts/create', [ContactController::class, 'create'])->name("contacts.create");
-
-//     Route::delete('/contacts/{contact}', [ContactController::class, 'destroy'])->name("contacts.destroy");
-// })->name("/contacts");
-
 Route::resource("/contacts", ContactController::class);
 
 Route::get('/dashboard', function () {
